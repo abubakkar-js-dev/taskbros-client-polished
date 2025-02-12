@@ -11,6 +11,7 @@ import ManageServices from "../pages/ManageServices";
 import BookedServices from "../pages/BookedServices";
 import ErrorPage from '../pages/ErrorPage'
 import ServicesToDo from "../pages/ServicesToDo";
+import AboutUs from "../pages/AboutUs";
 
  const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ import ServicesToDo from "../pages/ServicesToDo";
         {
             path: '/all-services',
             element: <AllServices />
+        },
+        {
+            path: 'about-us',
+            element: <AboutUs />
         },
         {
             path: '/manage-services',
