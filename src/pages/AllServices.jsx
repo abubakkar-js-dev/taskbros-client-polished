@@ -34,8 +34,12 @@ const AllServices = () => {
 
   // console.log('I am getting data',allServices)
 
+  const handleSort = (value) => {
+    console.log(value);
+  };
+
   return (
-    <div className="section-wrap p-4 max-w-7xl mx-auto mt-16">
+    <div className="section-wrap p-4 container mx-auto mt-16">
       <Helmet>
         <title>All Services - TaskBros | Browse Services</title>
       </Helmet>
@@ -60,54 +64,70 @@ const AllServices = () => {
         </p>
       </div>
 
-      {/* Search Box */}
-
-      <div className="max-w-md mx-auto mb-10">
-        <label
-          htmlFor="default-search"
-          className="mb-2 text-sm font-medium text-gray-900 sr-only"
-        >
-          Search
-        </label>
-        <div className="relative">
-          <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg
-              className="w-4 h-4 text-gray-500"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 20 20"
-            >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-              />
-            </svg>
+      <div className="flex flex-col md:flex-row justify-between items-center w-full mb-12 gap-12 lg:gap-0">
+        {/* Search Box */}
+        <div className="w-full max-w-screen-sm">
+          <label htmlFor="default-search" className="sr-only">
+            Search
+          </label>
+          <div className="relative">
+            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+              <svg
+                className="w-4 h-4 text-gray-500"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                />
+              </svg>
+            </div>
+            <input
+              onChange={(e) => setSearch(e.target.value)}
+              type="search"
+              id="default-search"
+              className={`block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-50 focus:outline-primary/30 ${
+                theme === "dark"
+                  ? "bg-gray-800 text-white border-gray-600 focus:ring-blue-400 focus:border-blue-400"
+                  : ""
+              }`}
+              placeholder="Search Services..."
+              required
+            />
           </div>
-          <input
-            onChange={(e) => setSearch(e.target.value)}
-            type="search"
-            id="default-search"
-            className={`block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-50 focus:outline-primary/30 ${
-              theme === "dark"
-                ? "bg-gray-800 text-white border-gray-600 focus:ring-blue-400 focus:border-blue-400"
-                : ""
-            }`}
-            placeholder="Search Services..."
-            required
-          />
+        </div>
+
+        {/* Sort */}
+        <div className="w-[300px] rounded-lg">
+          <div className="flex items-center gap-3">
+            <label className="text-sm font-medium whitespace-nowrap">
+              Sort by Price:
+            </label>
+            <select
+              onChange={(e) => handleSort(e.target.value)}
+              className="w-full p-2 border rounded-lg bg-gray-100 text-sm"
+            >
+              <option value="default" disabled>
+                Select one
+              </option>
+              <option value="asc">Low to High</option>
+              <option value="desc">High to Low</option>
+            </select>
+          </div>
         </div>
       </div>
 
       {isLoading && <Loading className="-mt-[200px]" />}
 
-
       {/*services Card section */}
       {allServices.length > 0 ? (
-        <div className="space-y-10">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3  gap-8">
           {allServices.map((service, idx) => (
             <ServiceCard key={`${service._id}-${idx}`} service={service} />
           ))}
