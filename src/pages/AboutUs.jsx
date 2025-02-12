@@ -1,5 +1,9 @@
+import { useContext } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import ThemeContext from '../contexts/ThemeContext/ThemeContext';
+import { Helmet } from 'react-helmet-async';
 const AboutUs = () => {
+    const {theme} = useContext(ThemeContext);
     const aboutUsData = {
         heroSection: {
           title: "About TaskBros - Your Trusted Service Partner",
@@ -141,10 +145,13 @@ const AboutUs = () => {
       };
             
     return (
-        <div className="container mx-auto p-8">
+        <div className="container mx-auto p-8 space-y-20 lg:space-y-22">
+          <Helmet>
+            <title>About Us - TaskBros</title>
+          </Helmet>
   
         {/* Our Team */}
-        <section className="py-12 bg-gray-100">
+        <section className={`py-12 bg-gray-100 border ${theme === 'dark'&& 'bg-slate-800/50 border-slate-800'}`}>
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">{aboutUsData.ourTeam.title}</h2>
             <p className="text-center mb-8">{aboutUsData.ourTeam.description}</p>
@@ -153,7 +160,7 @@ const AboutUs = () => {
                 <div key={index} className="text-center">
                   <img src={member.image} alt={member.name} className="rounded-full w-32 h-32 mx-auto mb-4 object-cover" />
                   <h3 className="text-xl font-semibold">{member.name}</h3>
-                  <p className="text-gray-600">{member.role}</p>
+                  <p className={`text-gray-600 ${theme==='dark'&& 'text-gray-200'}`}>{member.role}</p>
                 </div>
               ))}
             </div>
@@ -166,8 +173,8 @@ const AboutUs = () => {
             <h2 className="text-3xl font-bold text-center mb-8">{aboutUsData.testimonials.title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {aboutUsData.testimonials.reviews.map((review, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                  <p className="text-gray-700 mb-4">&quot;{review.comment}&quot;</p>
+                <div key={index} className={`border ${theme==='dark'&&'bg-slate-800/50 border-primary'} p-6 rounded-lg shadow-md`}>
+                  <p className={`text-gray-700 ${theme === 'dark'&& 'text-white'} mb-4`}>&quot;{review.comment}&quot;</p>
                   <div className="flex items-center justify-between">
                     <div>
                       <h3 className="font-semibold">{review.name}</h3>
@@ -188,12 +195,12 @@ const AboutUs = () => {
         </section>
   
         {/* FAQs */}
-        <section className="py-12 bg-gray-100">
+        <section className={`py-12 bg-gray-100 border ${theme==='dark'&&'bg-slate-800/50 border-slate-800'}`}>
           <div className="container mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">{aboutUsData.faqs.title}</h2>
             <div className="space-y-4">
               {aboutUsData.faqs.questions.map((faq, index) => (
-                <div key={index} className="border border-gray-300 rounded-lg p-4">
+                <div key={index} className={`border border-gray-300 ${theme==='dark'&& 'border-gray-800'} rounded-lg p-4`}>
                   <h3 className="text-xl font-semibold cursor-pointer" onClick={() => {
                     const answer = document.getElementById(`answer-${index}`);
                     answer.classList.toggle('hidden');
