@@ -77,7 +77,7 @@ const Navbar = () => {
         </div>
 
         {/* Center Section: Desktop Menu */}
-        <ul className="hidden items-center justify-center gap-10 md:flex">
+        <ul className="hidden items-center justify-center gap-10 lg:flex">
           <li>
             <NavLink
               to="/"
@@ -274,7 +274,7 @@ const Navbar = () => {
         <div
           ref={dropDownMenuRef}
           onClick={() => setDropDownState(!dropDownState)}
-          className="relative flex md:hidden"
+          className="relative flex lg:hidden"
         >
           <FaBars className="cursor-pointer" size={24} />
         </div>

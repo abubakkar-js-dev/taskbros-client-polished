@@ -36,6 +36,14 @@ const AllServices = () => {
 
   const handleSort = (value) => {
     console.log(value);
+    axios.get(`${import.meta.env.VITE_API_URL}/all-services?sort=${value}`)
+    .then(res=>{
+      console.log(res.data);
+      setAllServices(res.data);
+    })
+    .catch(err=>{
+      console.log(err);
+    })
   };
 
   return (
@@ -113,7 +121,7 @@ const AllServices = () => {
               onChange={(e) => handleSort(e.target.value)}
               className="w-full p-2 border rounded-lg bg-gray-100 text-sm"
             >
-              <option value="default" disabled>
+              <option selected value="default" disabled>
                 Select one
               </option>
               <option value="asc">Low to High</option>
@@ -127,7 +135,7 @@ const AllServices = () => {
 
       {/*services Card section */}
       {allServices.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3  gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-8">
           {allServices.map((service, idx) => (
             <ServiceCard key={`${service._id}-${idx}`} service={service} />
           ))}
