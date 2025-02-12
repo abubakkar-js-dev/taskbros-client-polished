@@ -119,7 +119,7 @@ const AllServices = () => {
             </label>
             <select
               onChange={(e) => handleSort(e.target.value)}
-              className="w-full p-2 border rounded-lg bg-gray-100 text-sm"
+              className={`w-full p-2 border rounded-lg bg-gray-100 ${theme ==='dark'&&'bg-slate-800/50 border-gray-800'} text-sm`}
             >
               <option selected value="default" disabled>
                 Select one

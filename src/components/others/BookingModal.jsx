@@ -260,7 +260,7 @@ const BookingModal = ({ service }) => {
             <button
               type="submit"
               onClick={handleConfirmBooking}
-              className="mt-4 bg-emerald-500 text-white font-medium py-3 px-6 rounded-lg shadow-lg"
+              className="mt-4 bg-primary text-white font-medium py-3 px-6 rounded-lg shadow-lg"
             >
               Confirm Booking
             </button>

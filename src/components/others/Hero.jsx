@@ -75,8 +75,8 @@ const Hero = () => {
                 Get Started
               </Link>
 
-              <a
-                href="#"
+              <Link
+                to="/about-us"
                 data-aos="fade-up"
                 data-aos-delay="600"
                 className={`block w-full rounded bg-white px-12 py-3 text-sm font-medium text-secondary shadow hover:text-orange-500 focus:outline-none focus:ring active:text-orange-500 sm:w-auto ${
@@ -84,7 +84,7 @@ const Hero = () => {
                 }`}
               >
                 Learn More
-              </a>
+              </Link>
             </div>
           </div>
 

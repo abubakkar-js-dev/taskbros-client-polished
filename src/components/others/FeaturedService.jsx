@@ -68,14 +68,14 @@ const FeaturedServices = () => {
               {service.name}
             </h3>
             <p className="mt-2 text-sm">{service.description}</p>
-            <p className="mt-4 text-lg font-bold flex-1">{service.price}</p>
-            <button
+            <p className="mt-4 text-lg font-bold flex-1 text-secondary">{service.price}</p>
+            {/* <button
               className={`mt-4 inline-block w-full rounded px-4 py-2 text-white ${
                 theme === "dark" ? "bg-orange-500 hover:bg-orange-400" : "bg-orange-600 hover:bg-orange-500"
               }`}
             >
               Explore More
-            </button>
+            </button> */}
           </div>
         ))}
       </div>
