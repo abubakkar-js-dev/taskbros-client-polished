@@ -63,22 +63,22 @@ const AboutUs = () => {
             {
               name: "John Doe",
               role: "Founder & CEO",
-              image: "https://images.pexels.com/photos/5668886/pexels-photo-5668886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              image: "https://i.ibb.co.com/mrmq0Tvf/pexels-photo-5668886.jpg",
             },
             {
-              name: "Sarah Smith",
+              name: "Brandon Hice",
               role: "Chief Technician",
-              image: "https://images.pexels.com/photos/7166996/pexels-photo-7166996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+              image: "https://i.ibb.co.com/fdJbD7MG/pexels-photo-7166996.jpg",
             },
             {
               name: "Michael Brown",
               role: "Customer Support Manager",
-              image: "https://img.freepik.com/free-photo/business-customer-service_329181-9143.jpg?t=st=1739328522~exp=1739332122~hmac=246b9b18a7d2d5d960540dbeb8c8135a84f32047d9854e98400f380aca9ba31a&w=1060",
+              image: "https://i.ibb.co.com/vN1G1Rd/business-customer-service-329181-9143.jpg",
             },
             {
               name: "Emily Davis",
               role: "Operations Head",
-              image: "https://img.freepik.com/free-photo/woman-using-tablet_53876-105182.jpg?t=st=1739328687~exp=1739332287~hmac=4af3dc2f0f48f6c46d1827c11dc7b073494b59cefdf6a2f96683c9cbda5ffd00&w=1380",
+              image: "https://i.ibb.co.com/RG2Hc4Hc/woman-using-tablet-53876-105182.jpg",
             },
           ],
         },
@@ -140,7 +140,7 @@ const AboutUs = () => {
           email: "support@taskbros.com",
           phone: "+123-456-7890",
           address: "123 TaskBros Street, Dhaka, Bangladesh",
-          image: "https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+          image: "https://i.ibb.co.com/6L8LhRs/pexels-photo-1181396.jpg",
         },
       };
             
